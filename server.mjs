@@ -26,25 +26,23 @@ app.post("/webhook", (req, res) => {
   console.log("Parameters:", parameters);
   let responseText = "";
 
-  //   switch (intent) {
-  //     case "Welcome":
-  //       responseText = "Welcome to the registration form. What is your name?";
-  //       break;
-  //     case "Name":
-  //       responseText = `Nice to meet you, ${parameters.name}. What is your father's name?`;
-  //       break;
-  //     case "FatherName":
-  //       responseText = `Thank you. What is your date of birth, ${parameters.fatherName}?`;
-  //       break;
-  //     case "Dob":
-  //       responseText = `Great! Your date of birth is ${parameters.dob}.`;
-  //       break;
-  //     // Add more cases for other intents as needed
-
-  //     default:
-  //       responseText = "Sorry, I did not understand that.";
-  //       break;
-  //   }
+  switch (intent) {
+    case "Default Welcome Intent":
+      responseText = "Welcome to the registration form. What is your name?";
+      break;
+    case "Name":
+      responseText = `Nice to meet you, ${parameters.name}. What is your father's name?`;
+      break;
+    case "FatherName":
+      responseText = `Thank you. What is your date of birth, ${parameters.fatherName}?`;
+      break;
+    case "Dob":
+      responseText = `Great! Your date of birth is ${parameters.dob}.`;
+      break;
+    default:
+      responseText = "Sorry, I did not understand that.";
+      break;
+  }
 
   // Prepare the response for Dialogflow
   const responseObject = {
