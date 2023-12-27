@@ -31,7 +31,7 @@ app.post("/webhook", (req, res) => {
       responseText = "Welcome to the registration form. What is your name?";
       break;
     case "Name":
-      responseText = `Nice to meet you, ${parameters.name}. What is your father's name?`;
+      responseText = `Nice to meet you, ${parameters.name.name}. What is your father's name?`;
       break;
     case "FatherName":
       responseText = `Thank you. What is your date of birth, ${parameters.fatherName}?`;
